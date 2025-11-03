@@ -1,0 +1,95 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        "${CONTEXT7_API_KEY}"
+      ],
+      "env": {},
+      "disabled": false,
+      "autoApprove": ["resolve-library-id", "get-library-docs"]
+    },
+    "console-ninja": {
+      "command": "node",
+      "args": ["/Users/joaobarros/.console-ninja/mcp"]
+    },
+    "sonarqube": {
+      "command": "docker run -i --rm -e SONARQUBE_TOKEN -e SONARQUBE_ORG mcp/sonarqube",
+      "env": {
+        "SONARQUBE_TOKEN": "${SONARQUBE_TOKEN}",
+        "SONARQUBE_ORG": "${SONARQUBE_ORG}",
+        "SONARQUBE_IDE_PORT": "64120"
+      },
+      "args": []
+    },
+    "github": {
+      "command": "docker run -i --rm -e GITHUB_PERSONAL_ACCESS_TOKEN ghcr.io/github/github-mcp-server",
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      },
+      "args": []
+    },
+    "slack": {
+      "command": "npx",
+      "args": ["-y", "slack-mcp-server@latest", "--transport", "stdio"],
+      "env": {
+        "SLACK_MCP_XOXP_TOKEN": "${SLACK_MCP_XOXP_TOKEN}",
+        "SLACK_MCP_ADD_MESSAGE_TOOL": "true",
+        "SLACK_MCP_USERS_CACHE": "~/slack-mcp/.users_cache.json",
+        "SLACK_MCP_CHANNELS_CACHE": "~/slack-mcp/.channels_cache_v2.json"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@0.0.36"]
+    },
+    "mysql": {
+      "command": "npx",
+      "args": ["-y", "@arvoretech/mysql-mcp@1.0.4"],
+      "env": {
+        "MYSQL_HOST": "${MYSQL_HOST}",
+        "MYSQL_PORT": "${MYSQL_PORT}",
+        "MYSQL_USER": "${MYSQL_USER}",
+        "MYSQL_PASSWORD": "${MYSQL_PASSWORD}",
+        "MYSQL_DATABASE": "${MYSQL_DATABASE}"
+      }
+    },
+    "npm-registry": {
+      "command": "npx",
+      "args": ["-y", "@arvoretech/npm-registry-mcp@1.0.4"]
+    },
+    "aws-secret-manager": {
+      "command": "npx",
+      "args": ["-y", "@arvoretech/aws-secrets-manager-mcp@1.0.4"],
+      "env": {
+        "AWS_PROFILE": "${AWS_PROFILE}",
+        "AWS_REGION": "${AWS_REGION}"
+      }
+    },
+    "linear": {
+      "url": "https://mcp.linear.app/sse",
+      "headers": {}
+    },
+    "deepwiki": {
+      "url": "https://mcp.deepwiki.com/sse"
+    },
+    "datadog": {
+      "command": "npx",
+      "args": ["-y", "@arvoretech/datadog-mcp@1.0.4"],
+      "env": {
+        "DATADOG_API_KEY": "${DATADOG_API_KEY}",
+        "DATADOG_APP_KEY": "${DATADOG_APP_KEY}",
+        "DATADOG_SITE": "${DATADOG_SITE}"
+      }
+    },
+    "figma": {
+      "url": "https://mcp.figma.com/mcp"
+    },
+    "notion": {
+      "url": "https://mcp.notion.com/mcp"
+    }
+  }
+}

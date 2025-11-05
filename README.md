@@ -7,6 +7,8 @@ Configuração do Cursor/AI usada pela equipe de engenharia da Árvore. Este rep
 - **`rules.md`** - User rules que definem como a IA deve se comportar durante o desenvolvimento
 - **`mcp.json`** - Configuração dos MCPs integrados (GitHub, Slack, Linear, SonarQube, etc.)
 - **`env.template`** - Template das variáveis de ambiente necessárias
+- **`.cursor/commands/`** - Comandos customizados para automação de workflow
+- **`.cursor/rules/`** - Mapeamento de atalhos para comandos
 
 ## 🚀 Como usar
 
@@ -15,6 +17,15 @@ Configuração do Cursor/AI usada pela equipe de engenharia da Árvore. Este rep
 3. No Cursor, vá em **Settings → MCP** e cole o conteúdo de `mcp.json`
 4. No Cursor, vá em **Settings → Rules** e referencie ou cole o conteúdo de `rules.md`
 5. Customize as variáveis `<linear_name>` e `<squad_name>` no `rules.md`
+6. Os comandos em `.cursor/commands/` são automaticamente reconhecidos pelo Cursor através do arquivo `.cursor/rules/commands.mdc`
+
+## ⚡ Comandos Disponíveis
+
+- **DTT** (Do The Task) - Identifica task do Linear pelo nome do branch, move para "in progress", implementa a task e garante qualidade
+- **OPR** (Open Pull Request) - Commita mudanças, gera descrição padronizada, cria PR e executa EPS automaticamente
+- **PR-DESC** - Gera descrição completa de PR seguindo o template do projeto
+- **EPS** (Send To Slack) - Envia notificação do PR para #eng-prs e move task para "In Review"
+- **VPR** (Send To Release) - Verifica se PR foi merged e envia notificação para #releases
 
 ## 🔌 MCPs Incluídos
 

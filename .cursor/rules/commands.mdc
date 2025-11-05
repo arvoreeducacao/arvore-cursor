@@ -1,0 +1,9 @@
+When the user says "DTT", refer to: .cursor/commands/do-linear-task.md
+
+When the user says "OPR", refer to: .cursor/commands/opr.md
+
+When the user says "PR-DESC", refer to: .cursor/commands/pr-desc.md
+
+When the user says "EPS", refer to: .cursor/commands/send-to-slack.md
+
+When the user says "VPR", refer to: .cursor/commands/send-to-release.md
